@@ -52,12 +52,12 @@ export async function POST(req) {
   console.log(`Webhook with and ID of ${id} and type of ${eventType}`)
   console.log('Webhook body:', body)
 
-  if(eventType == 'user.created') {
-    console.log('user.created')
+  if (evt.type === 'user.created') {
+    console.log('userId:', evt.data.id)
   }
 
-  if(eventType == 'user.updated') {
-    console.log('user.updated')
+  if(eventType === 'user.updated') {
+    console.log('user updated')
   }
 
   return new Response('', { status: 200 })
